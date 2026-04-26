@@ -162,7 +162,7 @@ def booking_success(request, booking_id):
     send_mail(
         subject="Your BookMySeat Ticket Confirmation",
         message="Your booking is confirmed. Please check the HTML version for full details.",
-        from_email="fs23if025@gmail.com",
+        from_email="priyanka111010@gmail.com",
         recipient_list=[request.user.email],
         html_message=html_content
     )

@@ -1,50 +1,135 @@
-BookMySeat - Movie Booking System
-BookMySeat is a movie ticket booking web application built with Django.  
-It allows users to browse movies, select theaters, reserve seats, complete payments, and view booking confirmations.  
+# 🎬 BookMySeat – Movie Ticket Booking App
+
+BookMySeat is a full-stack movie ticket booking platform built with **Django**.
+It enables users to explore movies, watch trailers, choose theaters, reserve seats, and complete bookings with online payments.
 
 ---
 
-Key Features
-1. Browse & Filter Movies – Search by genre, language, or keywords.
+## ✨ Highlights
 
-2. Watch Trailers – View embedded YouTube trailers directly.
+### 🎥 Movie Discovery
 
-3. Seat Reservation Timeout – Seats are held for 5 minutes until payment is confirmed.
-If payment succeeds within 5 minutes → seats are booked.
-If payment fails or timeout expires → seats are automatically released.
+* Browse all available movies
+* Filter by genre, language, or search keywords
+* Clean and modern UI
 
-4. Stripe Checkout Integration – Secure online payments with retry option.
+### ▶ Trailer Support
 
-5. Email Confirmation – Automatic booking confirmation sent to the user’s email.
+* Watch YouTube trailers directly inside the app
+* Automatically converts links into embed format
 
-6. Admin Dashboard – Interactive analytics with Chart.js:
-Total revenue
-Most popular movies
-Busiest theaters
-Detailed tables
+### 💺 Smart Seat Booking
+
+* Real-time seat selection
+* Seats are temporarily locked for a short duration
+* Prevents double booking
+
+### ⏳ Reservation Logic
+
+* Seats are held for a limited time before payment
+* Successful payment → booking confirmed
+* Failed/abandoned payment → seats released automatically
+
+### 💳 Payment Integration
+
+* Secure checkout powered by Stripe
+* Supports test transactions for development
+
+### 📧 Email Notifications
+
+* Booking confirmation sent instantly
+* Includes movie, theater, and seat details
+
+### 📊 Admin Insights
+
+* Revenue tracking
+* Most booked movies
+* High-traffic theaters
+* Visual charts for analytics
 
 ---
 
-Tech Stack
-Backend: Django (Python)
-Frontend: Bootstrap + Chart.js
-Database: SQLite
-Payments: Stripe Checkout
-Email: SendGrid 
+## 🧰 Tech Stack
+
+* **Backend:** Django (Python)
+* **Frontend:** HTML, CSS, Bootstrap
+* **Database:** SQLite
+* **Payments:** Stripe
+* **Email Service:** SendGrid
+* **Charts:** Chart.js
 
 ---
 
-IMP Notes
-Staff Access: Every registered user is automatically marked as staff (is_staff=True) for access to the analytics dashboard.
 
-Admin URL: /admin/
 
-Dashboard URL: /admin/dashboard/ shows analytics.
+---
 
-Payment Flow: Use Stripe test cards to simulate transactions.
-✅ Success: 4242 4242 4242 4242
-❌ Failure: 4000 0000 0000 0002
+## 🌐 Usage
 
-Email Confirmation: Check the registered email inbox (and spam folder) for booking details.
+* App: http://127.0.0.1:8000/
+* Admin Panel: http://127.0.0.1:8000/admin/
 
-Seat Reservation: Reserved seats auto‑release after 5 minutes if payment is not completed.
+---
+
+## 🔐 Important Notes
+
+* Users may be granted staff access for dashboard viewing
+* Admin panel is used to manage movies, theaters, and bookings
+
+### 💳 Test Payments (Stripe)
+
+Use these test card details:
+
+* ✔ Successful payment
+
+  ```
+  4242 4242 4242 4242
+  ```
+
+* ❌ Failed payment
+
+  ```
+  4000 0000 0000 0002
+  ```
+
+---
+
+## 📩 Email Behavior
+
+* Booking confirmation is sent after successful payment
+* Check spam folder if not received
+
+---
+
+## ⏱ Seat Handling Logic
+
+* Seats are temporarily reserved during checkout
+* Automatically freed if payment is not completed within the time window
+
+---
+
+## 🚧 Limitations
+
+* Some YouTube videos may not allow embedding
+* SQLite is not ideal for production-scale apps
+
+---
+
+## 🚀 Future Enhancements
+
+* QR-based digital tickets
+* Advanced recommendation system
+* Mobile-first UI improvements
+* Multi-language support
+
+---
+
+## 👨‍💻 Developer
+
+Priyanka Yadav
+
+---
+
+## 📄 License
+
+This project is intended for learning and demonstration purposes.
